@@ -1,0 +1,5 @@
+tu-repo/
+├── index.html
+├── style.css
+├── script.js
+└── (aviso-legal.html, privacidad.html, cookies.html)
