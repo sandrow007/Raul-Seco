@@ -1,2 +1,2 @@
-# Raul Seco
+# Raul-Seco
 Diseñador/Artista
