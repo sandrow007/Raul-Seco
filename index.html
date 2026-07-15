@@ -281,24 +281,45 @@
     </a>
   </div>
 </section>
-<!-- FOOTER CON REDES SOCIALES Y LEGALES -->
-<footer style="background-color: var(--noir); color: var(--hueso); padding: 40px 20px; text-align: center; font-family: 'Space Mono', monospace; border-top: 1px solid var(--oro); margin-top: 80px;">
-    
+<!-- PIE DE PÁGINA (ESTÁTICO) -->
+<footer style="background-color: #0c0c0c; color: #f5f5f5; padding: 40px 20px; text-align: center; font-family: 'Space Mono', monospace; border-top: 1px solid #b08d57; margin-top: 80px;">
+    <!-- Redes Sociales -->
     <div style="margin-bottom: 20px;">
-        <p style="font-family: 'Bodoni Moda', serif; color: var(--oro); font-size: 1.2rem; margin-bottom: 10px;">Conecta conmigo</p>
-        <!-- Enlace a Facebook -->
-        <a href="https://www.facebook.com/dsraulseco/" target="_blank" style="color: var(--hueso); text-decoration: none; margin: 0 15px; font-size: 0.9rem;">FACEBOOK</a>
-        <!-- Enlace a LinkedIn -->
-        <a href="https://www.linkedin.com/in/raúl-seco-salas-7a367414a" target="_blank" style="color: var(--hueso); text-decoration: none; margin: 0 15px; font-size: 0.9rem;">LINKEDIN</a>
+        <p style="font-family: 'Bodoni Moda', serif; color: #b08d57; font-size: 1.2rem; margin-bottom: 10px;">Raúl Seco - Diseñador</p>
+        <a href="https://www.facebook.com/dsraulseco/" target="_blank" style="color: #f5f5f5; text-decoration: none; margin: 0 15px; font-size: 0.8rem;">FACEBOOK</a>
+        <a href="https://www.linkedin.com/in/raúl-seco-salas-7a367414a" target="_blank" style="color: #f5f5f5; text-decoration: none; margin: 0 15px; font-size: 0.8rem;">LINKEDIN</a>
     </div>
-
+    <!-- Enlaces Legales -->
     <div style="margin-bottom: 20px; font-size: 0.8rem; opacity: 0.8;">
-        <a href="aviso-legal.html" style="color: var(--hueso); text-decoration: none;">Aviso Legal</a> | 
-        <a href="privacidad.html" style="color: var(--hueso); text-decoration: none;">Privacidad</a> | 
-        <a href="cookies.html" style="color: var(--hueso); text-decoration: none;">Cookies</a>
+        <a href="aviso-legal.html" style="color: #f5f5f5; text-decoration: none;">Aviso Legal</a> | 
+        <a href="privacidad.html" style="color: #f5f5f5; text-decoration: none;">Privacidad</a> | 
+        <a href="cookies.html" style="color: #f5f5f5; text-decoration: none;">Cookies</a>
     </div>
-
-    <p style="font-size: 0.7rem; opacity: 0.6;">&copy; 2024 Raúl Seco - Diseñador en Sevilla</p>
+    <p style="font-size: 0.7rem; opacity: 0.6;">&copy; 2024 Sevilla, España</p>
 </footer>
+<!-- BANNER DE COOKIES (FLOTANTE) -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #1a1a1a; color: #f5f5f5; padding: 20px; text-align: center; z-index: 9999; border-top: 2px solid #b08d57; font-family: 'Space Mono', monospace; display: none;">
+    <p style="margin-bottom: 15px; font-size: 0.9rem;">Utilizamos cookies para mejorar tu experiencia. ¿Aceptas su uso?</p>
+    <button onclick="acceptCookies()" style="background: #b08d57; color: #0c0c0c; border: none; padding: 10px 25px; cursor: pointer; font-weight: bold; margin-right: 10px;">ACEPTAR</button>
+    <button onclick="denyCookies()" style="background: transparent; color: #f5f5f5; border: 1px solid #f5f5f5; padding: 10px 25px; cursor: pointer;">DENEGAR</button>
+</div>
+
+<script>
+    // Lógica para que el banner desaparezca y no vuelva a salir si ya se aceptó
+    window.onload = function() {
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function denyCookies() {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
 </body>
 </html>
